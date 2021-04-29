@@ -1,0 +1,43 @@
+<div class="text-center">
+  <h2>{{title}}</h2>
+  <p>Written by {{user.name}} on {{format_date date_created}}</p>
+  <p>{{content}}</p>
+
+
+
+
+
+  Previous Comments: 
+  <div>
+    
+      {{#each comments as |comment|}}
+        <h4>{{this.content}}</h4>
+        <p>posted on {{format_date this.date_created}} by {{this.user.name}}</p>
+      {{/each}}
+    
+  </div>
+
+
+  <hr>
+
+
+
+
+  <div class="row mt-4">
+  <div class="col-md-12">
+    <h3>Write a comment on this post:</h3>
+
+    <form class="form new-comment-form" value = "3">
+      <div class="form-group">
+        <label for="post-content">Comment:</label>
+        <textarea class="form-input" id="post-content" name="post-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button id='post_id' type="submit" class="btn btn-primary" value= '{{id}}'>Post!</button>
+      </div>
+    </form>
+  </div>
+ 
+</div>
+
+<script src="/js/blogpost.js"></script>

@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+    <h3>Please share your thoughts with the world!</h3>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Write a new blog post:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="post-name">Title:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" />
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content:</label>
+        <textarea class="form-input" id="post-content" name="post-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Post!</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if blogposts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Blogposts:</h3>
+
+    {{#each blogposts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <h4><a href="/blogpost/{{post.id}}">{{post.title}}</a></h4>
+      </div>
+      <div class="col-md-3">
+        <button id = "update" class="btn btn-sm btn-info" data-id="{{post.id}}">UPDATE</button>
+      </div>
+      <div class="col-md-3">
+        <button id="delete" class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
