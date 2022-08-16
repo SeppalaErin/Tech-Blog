@@ -27,5 +27,5 @@ There are no other contributors to the project.
 
 ## Questions
 
-* My repositories can be found at https://www.github.com/aseppala98
+* My repositories can be found at https://www.github.com/seppalaerin
 * For any questions regarding this application, you can email me at SeppalaErin98@gmail.com
